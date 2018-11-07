@@ -3,6 +3,8 @@ package com.example.calinbaciu.kotutorial
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.support.v7.app.AppCompatActivity
+import android.view.animation.AlphaAnimation
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -27,8 +29,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         tapMeButton.setOnClickListener {
+            val bounceAnimation = AnimationUtils.loadAnimation(this, R.anim.bounce)
+            tapMeButton.startAnimation(bounceAnimation)
             startGame()
             incrementScore()
+            animateScore()
         }
         gameScoreTv.text = getString(R.string.your_score, score.toString())
 
@@ -66,6 +71,13 @@ class MainActivity : AppCompatActivity() {
         }
         countDownTimer.start()
         gameStarted = true
+    }
+
+    private fun animateScore(){
+        val alphaAnim = AlphaAnimation(0.0f,1.0f)
+        alphaAnim.duration = 400
+//        val alphaAnim = AnimationUtils.loadAnimation(this,R.anim.blink)
+        gameScoreTv.startAnimation(alphaAnim)
     }
 
     private fun incrementScore(){

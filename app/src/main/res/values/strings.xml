@@ -1,7 +1,10 @@
 <resources>
-    <string name="app_name">Kotutorial</string>
+    <string name="app_name">Kotime Fighter</string>
     <string name="your_score">Your Score: %s</string>
     <string name="time_left">Time left: %s</string>
     <string name="tap_me">Tap Me</string>
     <string name="game_finished_your_score">Game finished. Score: %s</string>
+    <string name="about">About</string>
+    <string name="about_dialog">Time Fighter %s</string>
+    <string name="about_message">Bla bla bla and bla bla bla. Also bla. </string>
 </resources>
